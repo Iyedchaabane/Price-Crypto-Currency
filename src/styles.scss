@@ -1,1 +1,50 @@
+// Import Angular Material and other dependencies here
+@use '@angular/material' as mat;
+
+// Define palettes for both light and dark themes
+$PriceCryptoCurrency-light-primary: mat.define-palette(mat.$indigo-palette);
+$PriceCryptoCurrency-light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$PriceCryptoCurrency-light-warn: mat.define-palette(mat.$red-palette);
+
+$PriceCryptoCurrency-dark-primary: mat.define-palette(mat.$blue-grey-palette);
+$PriceCryptoCurrency-dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$PriceCryptoCurrency-dark-warn: mat.define-palette(mat.$deep-orange-palette);
+
+// Define light theme
+$PriceCryptoCurrency-light-theme: mat.define-light-theme((
+  color: (
+    primary: $PriceCryptoCurrency-light-primary,
+    accent: $PriceCryptoCurrency-light-accent,
+    warn: $PriceCryptoCurrency-light-warn,
+  )
+));
+
+// Define dark theme
+$PriceCryptoCurrency-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $PriceCryptoCurrency-dark-primary,
+    accent: $PriceCryptoCurrency-dark-accent,
+    warn: $PriceCryptoCurrency-dark-warn,
+  )
+));
+
+// Include Angular Material core styles and component themes for both light and dark themes
+@include mat.core();
+@include mat.all-component-themes($PriceCryptoCurrency-light-theme);
+@include mat.all-component-themes($PriceCryptoCurrency-dark-theme);
+
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #212121;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
